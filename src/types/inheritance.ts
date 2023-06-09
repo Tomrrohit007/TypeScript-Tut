@@ -1,21 +1,30 @@
-class User {
-  name: string;
-  email: string;
-  age: number;
+// class User {
+//   name: string;
+//   email: string;
+//   age: number;
 
-  constructor(name: string, email: string, age: number) {
-    this.name = name;
-    this.email = email;
-    this.age = age;
-  }
-}
+//   constructor(name: string, email: string, age: number) {
+//     this.name = name;
+//     this.email = email;
+//     this.age = age;
+//   }
+// }
 
-class AdminUser extends User {
-  isAdmin = true;
-}
+// // Child Class always require a super method if we want to add construtor to it
 
-const user = new User("rohit", "rohit@gmail.com", 20);
-const adminUser = new AdminUser("paras", "paras@gmail.com", 21);
+// class AdminUser extends User {
+//   isAdmin = true;
+//   userReported: number;
 
-console.log(user);
-console.log(adminUser);
+//   constructor(name: string, email: string, age: number, userReported: number) {
+//     super(name, email, age);
+//     this.email = "zehermaal"
+//     this.userReported = userReported;
+//   }
+// }
+
+// const user = new User("rohit", "rohit@gmail.com", 20);
+// const adminUser = new AdminUser("paras", "paras@gmail.com", 21, 300);
+
+// console.log(user);
+// console.log(adminUser);
