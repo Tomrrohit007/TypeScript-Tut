@@ -1,22 +1,29 @@
-// In classess can use short hand for as inhertance by give the what kind of property it will be / public / protected / privately
 class User {
-  private _age: number | undefined;
-  constructor(public name: string, public email: string) {}
+  private testUserAge(age: number) {
+    if (age > 200 || age <= 0) throw new Error("Age must be between 0-200");
+    // return age;
+  }
+  constructor(private _name: string, private _age: number) {
+    this.testUserAge(_age);
+    this._age = _age;
+  }
 
   public set age(age: number) {
-    if (age > 200 || age <= 0) throw new Error("Age must be between 0-200");
+    // this.testUserAge(age);
     this._age = age;
   }
   public get age() {
-    console.log(this._age);
-    if (this._age !== undefined) {
-      return this._age;
-    }
-    throw new Error("The age property no defined yet");
+    return this._age;
+  }
+
+  public set name(name: string) {
+    this._name = name;
+  }
+  public get name() {
+    return this._name;
   }
 }
 
-const user = new User("rohit", "rohit@gmail.com");
-// user.age = 20;
-
-console.log(user);
+const user = new User("rohit", 400);
+console.log(user.name);
+console.log(user.age);
